@@ -30,4 +30,14 @@ export class StudentService {
   getStudentById(id: string): Promise<Student> {
     return this.studentRepository.findOne({ id });
   }
+
+  getManyStudents(studentIds: string[]): Promise<Student[]> {
+    return this.studentRepository.find({
+      where: {
+        id: {
+          $in: studentIds,
+        },
+      },
+    });
+  }
 }
