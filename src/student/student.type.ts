@@ -11,3 +11,4 @@ export class StudentType {
   @Field()
   lastName: string;
 }
+// test
